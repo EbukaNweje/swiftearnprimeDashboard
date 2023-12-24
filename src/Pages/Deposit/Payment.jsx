@@ -35,7 +35,7 @@ const Payment = () => {
         copied: false,
       });
 
-      const url = `https://webtext-qigk.onrender.com/api/sendpayment/${id}`
+      const url = `https://swiftearnprime.onrender.com/api/sendpayment/${id}`
       
       const payNow = ()=> {
         setButtonDisabled(true)
