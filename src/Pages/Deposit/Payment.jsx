@@ -36,10 +36,15 @@ const Payment = () => {
       });
 
       const url = `https://swiftearnprime.onrender.com/api/sendpayment/${id}`
+
+      const data = {
+        amountDeposited:amount,
+        paymentMethod: paymentname
+      }
       
       const payNow = ()=> {
         setButtonDisabled(true)
-        axios.post(url, {Amount:amount})
+        axios.post(url, data)
         .then(res => {
           console.log(res)
           setpay(true)

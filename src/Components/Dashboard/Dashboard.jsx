@@ -36,7 +36,7 @@ import TradingPlans from "../../Pages/TradingPlans/TradingPlans";
 import MyPlans from "../../Pages/MyPlans/MyPlans";
 import Referrals from "../../Pages/Referrals/Referrals";
 import ScrollToTop from "../ScrollToTop";
-
+import Swal from 'sweetalert2'
 
 const Dashboard = () => {
     const dispatch = useDispatch()
@@ -256,6 +256,10 @@ const Dashboard = () => {
           handleLinkClick();
       };
 
+      const Contactus = () =>{
+        Swal.fire("Contact us on live support");
+      }
+
     return (
         <>
     <ScrollToTop/>
@@ -424,7 +428,7 @@ const Dashboard = () => {
                                     </p>
                                 </div>
                                 <div className="DashboardNavContactBtn">
-                                    <button>Contact us</button>
+                                    <button onClick={Contactus}>Contact us</button>
                                 </div>
                             </div>
                         </div>
