@@ -508,6 +508,7 @@ const Dashboard = () => {
                                     homechange={setShowHome}
                                     planchange={setTradingPlans}
                                     Transactions={setShowTransaction}
+                                    handleShowDetailPlan={handleShowDetailPlan}
                                 />
                             ) : showdeposit ? (
                                 <Deposit />
@@ -522,7 +523,9 @@ const Dashboard = () => {
                             ) : showProfile ? (
                                 <Profile />
                             ) : showDetailPlan ? (
-                                <DetailPlan handleShowMyPlans={handleShowMyPlans}/>
+                                <DetailPlan
+                                    handleShowMyPlans={handleShowMyPlans}
+                                />
                             ) : showTradingPlans ? (
                                 <TradingPlans />
                             ) : showMyPlans ? (
