@@ -16,7 +16,7 @@ const DashHome = ({
     handleShowDetailPlan,
 }) => {
     const [exchangeRate, setExchangeRate] = useState(null);
-    const userData = useSelector((state) => state.persisitedReducer.user);
+    const userData = useSelector((state) => state.persitedReducer.user);
     console.log(userData);
 
     useEffect(() => {

@@ -64,11 +64,11 @@ const Dashboard = () => {
 
     useEffect(() => {
         if (id) {
-            handleGetUser();
+            handleGetUser;
         }
     }, [id]);
 
-    console.log("User Id from URL:", userData);
+    // console.log("User Id from URL:", userData);
 
     const [showUserDrop, setShowUserDrop] = useState(false);
     const userDropdownRef = useRef(null);
