@@ -31,7 +31,7 @@ const Payment = () => {
     // console.log(depositData)
 
     const [state, setState] = useState({
-        value: `${paymentname === "BITCOINP PAYMENT"? ("1ry8iuCgZWR52sS1gKLgftUpNUw1iuqqQ"): paymentname === "ETHEREUM PAYMENT"? ("0x189507234267A65E032fd752b4815A7B7E6040a0"):"Chosse a Payment Method"}`,
+        value: `${paymentname === "BITCOINP PAYMENT"? ("15MoY6ShcPqVVJ3e89bDhwLQUPgmJRXwB3"): paymentname === "ETHEREUM PAYMENT"? ("0xAAfE9Fdc9eC7995D84ca4383ECB26Fb8267b971c"):"Chosse a Payment Method"}`,
         copied: false,
       });
 
