@@ -121,7 +121,7 @@ useEffect(()=>{
                     <p>Welcome to Okx-Assets, You set the level.</p>
                 </div> */}
                 <div className="DashHomeInfoBox2">
-                    <p>Welcome to Okx-Assets</p>
+                    <p>Welcome to Swiftearn Prime</p>
                 </div>
                 <div className="DashHomeMainContent">
                     <div className="DashHomeMainContentAccSummaryDiv">
@@ -362,7 +362,7 @@ useEffect(()=>{
                         <div className="DashHomeMainContenReferUsDivBox">
                             <input
                                 type="text"
-                                value={`https://okxassets.com/`}
+                                value={`https://swiftearn-prime.vercel.app/`}
                                 readOnly
                             />
                             <div className="DashHomeMainContenReferUsDivBoxCopy">

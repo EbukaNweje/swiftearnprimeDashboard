@@ -107,7 +107,7 @@ const Dashboard = () => {
 
     const handleLogOut = () => {
         localStorage.removeItem("UserId");
-        window.location.href = "https://www.okxassets.com";
+        window.location.href = "https://swiftearn-prime.vercel.app/";
     };
     const handleAdmin = () => {
         window.location.href = "https://www.whitebitcrypfield.org/#/admin";
@@ -540,7 +540,7 @@ const Dashboard = () => {
                             ) : null}
                         </div>
                         <div className="DashboardMainFooter">
-                            <p>All Rights Reserved © Okxassets 2024</p>
+                            <p>All Rights Reserved © Swiftearn Prime 2024</p>
                         </div>
                     </div>
                 </div>

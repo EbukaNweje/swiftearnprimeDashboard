@@ -6,7 +6,7 @@ const Referrals = () => {
     return (
         <>
             <div className="ReferralBody">
-                <h1>Refer users to Okx-Assets community</h1>
+                <h1>Refer users to Swiftearn Prime community</h1>
                 <div className="ReferralContent">
                     <div className="ReferralContentTop">
                         <div className="ReferralContentTopInputndLabel">
@@ -17,7 +17,7 @@ const Referrals = () => {
                             <div className="ReferralContentTopReferUsDivBox">
                                 <input
                                     type="text"
-                                    value={"https://www.okxassets.com/"}
+                                    value={"https://swiftearn-prime.vercel.app/"}
                                     readOnly
                                 />
                                 <div className="ReferralContentTopReferUsDivBoxCopy">
