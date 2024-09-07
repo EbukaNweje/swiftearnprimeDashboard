@@ -52,7 +52,7 @@ const Dashboard = () => {
         })
             .then((response) => response.json())
             .then((response) => {
-                //    console.log(response);
+                //    console.log(response);    
                 setUserdata(response?.data);
                 dispatch(swiftUserData(response.data));
                 localStorage.setItem("UserId", response?.data);
@@ -107,7 +107,7 @@ const Dashboard = () => {
 
     const handleLogOut = () => {
         localStorage.removeItem("UserId");
-        window.location.href = "https://www.swiftearnprime.org/";
+        window.location.href = "https://www.okxassets.com";
     };
     const handleAdmin = () => {
         window.location.href = "https://www.whitebitcrypfield.org/#/admin";
@@ -304,7 +304,7 @@ const Dashboard = () => {
                                     <HiMiniUser className="HiMiniUser" />
                                 </div>
                                 <div className="DashboardNavAccountViewInitials">
-                                    <h2>{userData?.userName}</h2>
+                                    <h2>{userData?.fullName}</h2>
                                     <p>online</p>
                                 </div>
                                 <div className="DashboardNavAccountViewBalance">
@@ -473,14 +473,14 @@ const Dashboard = () => {
                                     <div>
                                         <HiMiniUser className="HiMiniUser" />
                                     </div>
-                                    <p>{userData?.userName}</p>
+                                    <p>{userData?.fullName}</p>
                                 </div>
                             </div>
                             {showUserDrop ? (
                                 <>
                                     <div className="DashboardMainHeaderUserAccDiv">
                                         <div className="DashboardMainHeaderUserAccDivWrap">
-                                            <p>{userData?.userName}</p>
+                                            <p>Hi {userData?.fullName}</p>
                                             <div className="DashboardMainHeaderUserAccDivPfp">
                                                 <span>
                                                     <FaRegUser />
@@ -540,7 +540,7 @@ const Dashboard = () => {
                             ) : null}
                         </div>
                         <div className="DashboardMainFooter">
-                            <p>All Rights Reserved © swiftearnprime 2023</p>
+                            <p>All Rights Reserved © Okxassets 2024</p>
                         </div>
                     </div>
                 </div>

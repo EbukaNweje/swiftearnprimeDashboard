@@ -18,7 +18,7 @@ const Payment = () => {
 
 
     const nav = useNavigate()
-    console.log(amount);
+    console.log(paymentname);
 
     const depositDatas = 
         {
@@ -30,24 +30,37 @@ const Payment = () => {
     const dispatch = useDispatch()
 
     const [state, setState] = useState({
-        value: `${paymentname === "BITCOINP PAYMENT"? ("15MoY6ShcPqVVJ3e89bDhwLQUPgmJRXwB3"): paymentname === "ETHEREUM PAYMENT"? ("0xAAfE9Fdc9eC7995D84ca4383ECB26Fb8267b971c"):"Chosse a Payment Method"}`,
+        value: `${paymentname === "BTC"? ("15MoY6ShcPqVVJ3e89bDhwLQUPgmJRXwB3"): paymentname === "ETH"? ("0xAAfE9Fdc9eC7995D84ca4383ECB26Fb8267b971c"):"Chosse a Payment Method"}`,
         copied: false,
       });
 
       const url = `https://swiftearnprime.onrender.com/api/sendpayment/${id}`
+      const url2 = `https://swiftearnprime.vercel.app/api/deposit/${id}`
 
       const data = {
-        amountDeposited:amount,
-        paymentMethod: paymentname
+        amount:amount
+      }
+      const data2 = {
+        amount: amount,
+        coin: paymentname
       }
       
+      const SendPayMenttoadmin = ()=> {
+        axios.post(url2, data2)
+        .then(res => {
+          console.log(res)
+        //   setpay(true)
+        }).catch((err)=>{
+          console.log(err)
+        })
+      }
       const payNow = ()=> {
         setButtonDisabled(true)
         axios.post(url, data)
         .then(res => {
+            SendPayMenttoadmin()
           console.log(res)
           setpay(true)
-
         }).catch((err)=>{
           console.log(err)
         })

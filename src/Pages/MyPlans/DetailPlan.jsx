@@ -30,7 +30,7 @@ const DetailPlan = ({handleShowMyPlans}) => {
     return (
         <>
             <Modal
-                title={`Delete ${singlePlans?.name} Plan`}
+                title={`Delete ${singlePlans?.plan.planName}`}
                 open={openModal}
                 onCancel={handleCloseModal}
                 footer={null}
@@ -57,8 +57,8 @@ const DetailPlan = ({handleShowMyPlans}) => {
                         <IoMdArrowBack className="IoMdArrowBack" onClick={()=>handleShowMyPlans()}/>
                     </div>
                     <h2 className="planBigTextInfo">
-                        {singlePlans?.name} Plan - $1125 Daily for{" "}
-                        {singlePlans?.duration} days
+                        {singlePlans?.plan.planName} - ${singlePlans?.plan.percentageInterest} Daily for{" "}
+                        {singlePlans?.plan.durationDays} days
                     </h2>
                     <div className="DetailPlanMainTopBtns">
                         <button
@@ -82,17 +82,17 @@ const DetailPlan = ({handleShowMyPlans}) => {
                         <div className="DetailPlanInfoDivMain1">
                             <div className="DetailPlanInfoDivMain1DivA">
                                 <h3>
-                                    ${singlePlans?.currentInvAmt}.00{" "}
+                                    ${singlePlans?.plan.investment.amount}.00{" "}
                                     <span>Invested amount</span>
                                 </h3>
                                 <h3>+</h3>
                                 <h3>
-                                    $0.00 <span>Profit earned</span>
+                                    ${singlePlans?.plan.percentageInterest}.00 <span>Profit earned</span>
                                 </h3>
                             </div>
                             <div className="DetailPlanInfoDivMain1DivB">
                                 <h3>
-                                    ${singlePlans?.currentInvAmt}.00{" "}
+                                    ${singlePlans?.plan.investment.totalDailyInterest}.00{" "}
                                     <span>Total return</span>
                                 </h3>
                             </div>
@@ -100,25 +100,25 @@ const DetailPlan = ({handleShowMyPlans}) => {
                         <div className="DetailPlanInfoDivMain2">
                             <div className="DetailPlanInfoDivMain2A">
                                 <p>Duration:</p>
-                                <p>{singlePlans?.duration} days</p>
+                                <p>{singlePlans?.plan.durationDays} days</p>
                             </div>
                             <div className="DetailPlanInfoDivMain2B">
                                 <p>Start Date:</p>
-                                <p>{singlePlans?.startDate}</p>
+                                <p>{singlePlans?.plan.investment.Date}</p>
                             </div>
                             <div className="DetailPlanInfoDivMain2C">
                                 <p>End Date:</p>
-                                <p>{singlePlans?.endDate}</p>
+                                <p>{singlePlans?.plan.investment.endDate}</p>
                             </div>
                         </div>
                         <div className="DetailPlanInfoDivMain2">
                             <div className="DetailPlanInfoDivMain2A">
                                 <p>Minimum Return:</p>
-                                <p>{singlePlans?.minimumReturn}%</p>
+                                <p>{singlePlans?.plan.minimumDeposit}%</p>
                             </div>
                             <div className="DetailPlanInfoDivMain2B">
                                 <p>Maximum Return:</p>
-                                <p>{singlePlans?.maximumReturn}%</p>
+                                <p>{singlePlans?.plan.maximumDeposit}%</p>
                             </div>
                             <div className="DetailPlanInfoDivMain2C">
                                 <p>ROI Interval</p>

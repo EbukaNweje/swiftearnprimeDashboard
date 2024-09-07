@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { updatewithdraw } from "../../Components/store/FeaturesSlice";
+import { BiMoneyWithdraw } from "react-icons/bi";
 
 const WithdrawFunds = () => {
     const {id} = useParams()
@@ -18,27 +19,44 @@ const WithdrawFunds = () => {
     const [amountError, setAmountError] = useState("")
     const [withdrawCodes, setWithdrawCodes] = useState("")
     const [isButtonDisabled, setButtonDisabled] = useState(false);
+    const [isButtonDisabled2, setButtonDisabled2] = useState(false);
+    const [clickMe, setClickMe] = useState(false)
     const dispatch = useDispatch()
-
+    const [addprofit, setAddProfit] = useState()
+    const [pay, setpay] = useState(false)
 
     const userData = useSelector((state) => state.persisitedReducer.user)
     console.log(userData);
 
-    const url = `https://webtext-qigk.onrender.com/api/requestwithdrawcode/${id}`
-    const urlll = `https://webtext-qigk.onrender.com/api/withdrawal`
+    const url = `https://swiftearnprime.onrender.com/api/requestwithdrawcode/${id}`
+    const urlll = `https://swiftearnprime.onrender.com/api/withdraw/${id}`
+    const urlprofit = `https://swiftearnprime.onrender.com/api/transferprofittoaccount/${id}`
+    const urlemail = `https://swiftearnprime.onrender.com/api/withdrawalemailsend/${id}`
 
     let userName = userData?.userName
     let email = userData?.email
 
-    const datas = {withdrawalWallet, userName, email, amount}
+    const datas = {walletAddress: withdrawalWallet, amount, coin: "BTC"}
 
     const datasend = {
         withdrawalWallet, userName, email, amount, dateCreated: new Date().toDateString(),
     }
 
-    const SandData = () => {
-        dispatch(updatewithdraw(datasend))
-    }
+    const datasa = {amount}
+
+    const sendSignUpEmail = async () => {
+         axios.post(urlemail, datasa)
+            .then(response => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        };
+
+    // const SandData = () => {
+    //     dispatch(updatewithdraw(datasend))
+    // }
 
     const sendWallet = () => {
         if(userData.withdrawCode !== withdrawCodes) {
@@ -49,9 +67,15 @@ const WithdrawFunds = () => {
             setAmountError("You can not leave this Field Empty")
         }
         else{
+            setClickMe(true);
             axios.post(urlll, datas)
-            .then(res => {console.log(res), SandData(), window.location.reload()})
+            .then(res => {console.log(res.data.message), 
+                sendSignUpEmail()
+                alert(res.data.message)
+                window.location.reload()
+            })
             .catch((err)=>{
+                setClickMe(false)
                 console.log(err)
             })
         }
@@ -67,6 +91,22 @@ const sendWithdrawcode = ()=>{
              .catch((err)=>{
                 setButtonDisabled(false)
                 console.log(err)
+            })
+}
+
+const addProfitToAccount = ()=>{
+         setButtonDisabled2(true)
+            axios.post(urlprofit)
+                .then(res=>{
+                    setpay(true)
+                console.log(res.data.message)
+                setAddProfit(res.data.message)
+            })
+             .catch((err)=>{
+                setButtonDisabled2(false)
+                console.log(err)
+                setAddProfit(err.data.message)
+                setpay(true)
             })
 }
 
@@ -151,6 +191,18 @@ const sendWithdrawcode = ()=>{
                             </div>
                         </div>
                         <div className="WithdrawFundsContentBox4">
+                            <div className="WithdrawFundsContentBox3A">
+                                <p>Do you want to withdraw bonus and profit to account balance?</p>
+                                <button onClick={addProfitToAccount}
+                                 disabled={isButtonDisabled2}
+                                 style={{background: `${isButtonDisabled2 ? "#E0E0E5" : "#0E4152"}`}}
+                                >
+                                    <span>
+                                        <BiMoneyWithdraw />
+                                    </span>
+                                    withdrawal
+                                </button>
+                            </div>
                             <h3>Enter BITCOIN PAYMENT Address</h3>
                             <input
                                 type="text"
@@ -165,10 +217,21 @@ const sendWithdrawcode = ()=>{
                             </p>
                         </div>
                         <div className="WithdrawFundsContentBox5">
-                            <button onClick={sendWallet}> Complete Request</button>
+                            <button onClick={sendWallet}>{
+                                clickMe? "Loading..."  : "Complete Request"
+                            }</button>
                         </div>
                     </div>
                 </div>
+
+            {
+                pay ? <div className='SuccessPaid'>
+                <div className='PayCon'>
+                    <h3>{addprofit}</h3>
+                    <button style={{width: "50%", height: "40px", background:"#0e4152", border:"none", color:"white", fontSize:"15px"}} onClick={()=>{setpay(false); nav(`/${id}`); dispatch(updateDepositData(depositDatas))}}>Ok</button>
+                </div>
+            </div>: null
+            }
             </div>
         </>
     );

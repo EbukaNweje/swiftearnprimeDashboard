@@ -32,12 +32,12 @@ const Deposit = () => {
             setDoge(false)
             setEth(false)
             setbnb(false)
-            nav(`payment/BITCOINP PAYMENT`)
+            nav(`payment/BTC`)
         } else if(eth === true) {
             setDoge(false)
             setBitcoin(false)
             setbnb(false)
-            nav(`payment/ETHEREUM PAYMENT`)
+            nav(`payment/ETH`)
         } else if(doge === true) {
             setEth(false)
             setBitcoin(false)
