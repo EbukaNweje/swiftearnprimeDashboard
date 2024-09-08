@@ -19,16 +19,17 @@ const TradingPlans = () => {
     const [planPrice, setPlanPrice] = useState(0);
     // const [boxPrice, setBoxPrice] = useState(0);
     const dispatch = useDispatch();
-
+    
     const nav = useNavigate()
     const userData = useSelector((state) => state.persisitedReducer.user);
     // const allPlans = useSelector((state) => state.persisitedReducer.plans);
     console.log("mal", selectedPackage?._id);
-
+    
     const handleShowSelect = () => {
         setShowSelect(!showSelect);
     };
-
+    
+    let AccountBlance = userData?.accountBalance + userData?.totalProfit + userData?.bonus + userData?.totalDeposit
     const [disabledBtn, setDisabledBtn] = useState(true);
     const [info, setInfo] = useState("");
     const [error, setError] = useState(false);
@@ -136,7 +137,7 @@ const TradingPlans = () => {
     }, []);
 
     const validateSubmit = () => {
-        if (planPrice > parseInt(userData.accountBalance)) {
+        if (planPrice > parseInt(AccountBlance)) {
             setDisabledBtn(true);
             setInfo("Insufficient fund");
             setError(true);
@@ -218,6 +219,7 @@ const TradingPlans = () => {
         }));
     };
 
+    
     return (
         <>
             <div className="TradingPlansBody">
@@ -293,7 +295,7 @@ const TradingPlans = () => {
                                     <IoWalletOutline className="IoWalletOutline" />
                                     <p>
                                         Account Balance{" "}
-                                        <span>${userData?.accountBalance}</span>
+                                        <span>${AccountBlance}</span>
                                     </p>
                                 </div>
                             </div>

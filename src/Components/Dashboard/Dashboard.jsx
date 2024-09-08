@@ -284,6 +284,8 @@ const Dashboard = () => {
         Swal.fire("Contact us on live support");
     };
 
+    let AccountBlance = userData?.accountBalance + userData?.totalProfit + userData?.bonus + userData?.totalDeposit
+
     return (
         <>
             <ScrollToTop />
@@ -310,7 +312,7 @@ const Dashboard = () => {
                                 <div className="DashboardNavAccountViewBalance">
                                     <GoDatabase />{" "}
                                     <span>
-                                        $&nbsp;{userData?.accountBalance}
+                                        $&nbsp;{AccountBlance}
                                     </span>
                                 </div>
                             </div>

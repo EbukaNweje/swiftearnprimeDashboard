@@ -82,17 +82,17 @@ const WithdrawFunds = () => {
     }
 
 
-const sendWithdrawcode = ()=>{
-         setButtonDisabled(true)
-            axios.post(url)
-                .then(res=>{
-                console.log(res)
-            })
-             .catch((err)=>{
-                setButtonDisabled(false)
-                console.log(err)
-            })
-}
+// const sendWithdrawcode = ()=>{
+//          setButtonDisabled(true)
+//             axios.post(url)
+//                 .then(res=>{
+//                 console.log(res)
+//             })
+//              .catch((err)=>{
+//                 setButtonDisabled(false)
+//                 console.log(err)
+//             })
+// }
 
 const addProfitToAccount = ()=>{
          setButtonDisabled2(true)
@@ -168,7 +168,7 @@ const addProfitToAccount = ()=>{
                             <input type="number" placeholder="Enter Amount" onChange={handleAmountVal}/>
                             <p style={{marginTop: "3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{amountError}</p>
                         </div>
-                        <div className="WithdrawFundsContentBox3">
+                        {/* <div className="WithdrawFundsContentBox3">
                             <div className="WithdrawFundsContentBox3A">
                                 <p>Enter OTP</p>
                                 <button onClick={sendWithdrawcode}
@@ -189,9 +189,9 @@ const addProfitToAccount = ()=>{
                                     request{" "}
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="WithdrawFundsContentBox4">
-                            <div className="WithdrawFundsContentBox3A">
+                            {/* <div className="WithdrawFundsContentBox3A">
                                 <p>Do you want to withdraw bonus and profit to account balance?</p>
                                 <button onClick={addProfitToAccount}
                                  disabled={isButtonDisabled2}
@@ -202,7 +202,7 @@ const addProfitToAccount = ()=>{
                                     </span>
                                     withdrawal
                                 </button>
-                            </div>
+                            </div> */}
                             <h3>Enter BITCOIN PAYMENT Address</h3>
                             <input
                                 type="text"

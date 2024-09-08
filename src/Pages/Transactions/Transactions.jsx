@@ -44,7 +44,7 @@ const Transactions = () => {
     const getAllDeposit = ()=>{
            axios.get(url)
                .then(res=>{
-               console.log(res.data.data)
+               console.log(res)
                setAllDeposit(res.data.data)
            })
             .catch((err)=>{
@@ -261,7 +261,7 @@ useEffect(()=>{
                                 </div>
                                 <div className="TransactionContentResultC">
                                 {
-                                        allWithdrawal.map((props)=>( 
+                                        allWithdrawal?.map((props)=>( 
                                     <div className="TransactionContentResultCItem">
                                         <div className="TransactionContentResultC1W">
                                             ${props.amount}

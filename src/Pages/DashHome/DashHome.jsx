@@ -79,7 +79,7 @@ const DashHome = ({
     const getalluserplan = ()=>{
         axios.get(url4)
             .then(res=>{
-            console.log("getalluserplan",res.data)
+            console.log("getalluserplan",res)
             setAlluserplan(res.data)
         })
          .catch((err)=>{
@@ -89,6 +89,7 @@ const DashHome = ({
 
 console.log(alluserplan?.data)
 
+let AccountBlance = userData?.accountBalance + userData?.totalProfit + userData?.bonus + userData?.totalDeposit
 useEffect(()=>{
  getAllOthers()
  getalluserplan()
@@ -134,7 +135,7 @@ useEffect(()=>{
                                     <div className="DashHomeMainContentAccSummaryRow1BoxL">
                                         <h4>Account Balance</h4>
                                         <h3>
-                                            $ &nbsp;{userData?.accountBalance}
+                                            $ &nbsp; {AccountBlance}
                                             .00
                                         </h3>
                                         <span style={{fontWeight: "700"}}> 
@@ -145,7 +146,7 @@ useEffect(()=>{
                                         <img src={lineChart} alt="" />
                                     </div>
                                 </div>
-                                {/* <div className="DashHomeMainContentAccSummaryRow1Box">
+                                <div className="DashHomeMainContentAccSummaryRow1Box">
                                     <div className="DashHomeMainContentAccSummaryRow1BoxL">
                                         <h4>Total Profit</h4>
                                         <h3>
@@ -158,7 +159,7 @@ useEffect(()=>{
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
                                         <img src={lineChart} alt="" />
                                     </div>
-                                </div> */}
+                                </div>
                                 <div className="DashHomeMainContentAccSummaryRow1Box">
                                     <div className="DashHomeMainContentAccSummaryRow1BoxL">
                                         <h4>Bonus</h4>
@@ -182,7 +183,7 @@ useEffect(()=>{
                                         <img src={lineChart} alt="" />
                                     </div>
                                 </div> */}
-                                {/* <div className="DashHomeMainContentAccSummaryRow2Box">
+                                <div className="DashHomeMainContentAccSummaryRow2Box">
                                     <div className="DashHomeMainContentAccSummaryRow2BoxL">
                                         <h4>Total Deposits</h4>
                                         <h3>
@@ -194,10 +195,10 @@ useEffect(()=>{
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
                                         <img src={lineChart} alt="" />
                                     </div>
-                                </div> */}
+                                </div>
                                 <div className="DashHomeMainContentAccSummaryRow2Box">
                                     <div className="DashHomeMainContentAccSummaryRow2BoxL">
-                                        <h4>Total withdrawal</h4>
+                                        <h4>Total Withdrawal</h4>
                                         <h3>
                                             $ &nbsp;{userData?.totalWithdrawal}
                                             .00
