@@ -89,7 +89,7 @@ const DashHome = ({
 
 console.log(alluserplan?.data)
 
-let AccountBlance = userData?.accountBalance + userData?.totalProfit + userData?.bonus + userData?.totalDeposit
+let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit
 useEffect(()=>{
  getAllOthers()
  getalluserplan()
