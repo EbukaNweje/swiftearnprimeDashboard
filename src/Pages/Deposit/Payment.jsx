@@ -123,7 +123,7 @@ const Payment = () => {
           {pay?
           <div className='SuccessPaid'>
                 <div className='PayCon'>
-                    <h3>You have successfully made a deposit </h3>
+                    <h3>Thanks for deposit. We will check your transaction. </h3>
                     <button style={{width: "50%", height: "40px", background:"#0e4152", border:"none", color:"white", fontSize:"15px"}} onClick={()=>{setpay(false); nav(`/${id}`); dispatch(updateDepositData(depositDatas))}}>Ok</button>
                 </div>
             </div>: 
