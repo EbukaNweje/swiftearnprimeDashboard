@@ -89,7 +89,7 @@ const DashHome = ({
 
 console.log(alluserplan?.data)
 
-let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit
+let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit + userData?.ref
 useEffect(()=>{
  getAllOthers()
  getalluserplan()
@@ -172,7 +172,7 @@ useEffect(()=>{
                                     </div>
                                 </div>
                                 {/* <div className="DashHomeMainContentAccSummaryRow2"> */}
-                                {/* <div className="DashHomeMainContentAccSummaryRow2Box">
+                                <div className="DashHomeMainContentAccSummaryRow2Box">
                                     <div className="DashHomeMainContentAccSummaryRow2BoxL">
                                         <h4>Referral Bonus</h4>
                                         <h3>$ &nbsp;{userData?.ref}.00</h3>
@@ -182,7 +182,7 @@ useEffect(()=>{
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
                                         <img src={lineChart} alt="" />
                                     </div>
-                                </div> */}
+                                </div>
                                 <div className="DashHomeMainContentAccSummaryRow2Box">
                                     <div className="DashHomeMainContentAccSummaryRow2BoxL">
                                         <h4>Total Deposits</h4>

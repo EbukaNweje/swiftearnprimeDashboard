@@ -29,7 +29,7 @@ const TradingPlans = () => {
         setShowSelect(!showSelect);
     };
     
-    let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit
+    let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit + userData?.ref
     const [disabledBtn, setDisabledBtn] = useState(true);
     const [info, setInfo] = useState("");
     const [error, setError] = useState(false);
