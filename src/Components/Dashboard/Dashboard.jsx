@@ -284,8 +284,7 @@ const Dashboard = () => {
         Swal.fire("Contact us on live support");
     };
 
-    let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit + userData?.ref
-
+    let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit + Number(userData?.ref)
     return (
         <>
             <ScrollToTop />

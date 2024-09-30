@@ -87,9 +87,9 @@ const DashHome = ({
         })
 }
 
-console.log(alluserplan?.data)
 
-let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit + userData?.ref
+let AccountBlance = userData?.totalProfit + userData?.bonus + userData?.totalDeposit + Number(userData?.ref)
+console.log(AccountBlance)
 useEffect(()=>{
  getAllOthers()
  getalluserplan()
@@ -135,7 +135,7 @@ useEffect(()=>{
                                     <div className="DashHomeMainContentAccSummaryRow1BoxL">
                                         <h4>Account Balance</h4>
                                         <h3>
-                                        $ &nbsp; {AccountBlance === 0 ? "" : 0}
+                                        $ &nbsp; {AccountBlance === 0 ? "" : AccountBlance}
                                             .00
                                         </h3>
                                         <span style={{fontWeight: "700"}}> 
