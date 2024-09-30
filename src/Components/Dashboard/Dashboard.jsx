@@ -312,7 +312,8 @@ const Dashboard = () => {
                                 <div className="DashboardNavAccountViewBalance">
                                     <GoDatabase />{" "}
                                     <span>
-                                        $&nbsp;{AccountBlance}
+                                    $ &nbsp; {AccountBlance === 0 ? "" : 0}
+                                            .00
                                     </span>
                                 </div>
                             </div>

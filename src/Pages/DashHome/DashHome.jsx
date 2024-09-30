@@ -135,7 +135,7 @@ useEffect(()=>{
                                     <div className="DashHomeMainContentAccSummaryRow1BoxL">
                                         <h4>Account Balance</h4>
                                         <h3>
-                                            $ &nbsp; {AccountBlance}
+                                        $ &nbsp; {AccountBlance === 0 ? "" : 0}
                                             .00
                                         </h3>
                                         <span style={{fontWeight: "700"}}> 
