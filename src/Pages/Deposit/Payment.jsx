@@ -35,7 +35,7 @@ const Payment = () => {
       });
 
       const url = `https://swiftearnprime.onrender.com/api/sendpayment/${id}`
-      const url2 = `https://swiftearnprime.vercel.app/api/deposit/${id}`
+      const url2 = `https://swiftearnprime-coral.vercel.app/api/deposit/${id}`
 
       const data = {
         amount:amount

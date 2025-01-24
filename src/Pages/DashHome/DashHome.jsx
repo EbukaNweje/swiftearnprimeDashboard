@@ -63,8 +63,8 @@ const DashHome = ({
     const [others, setOthers] = useState();
     const [alluserplan, setAlluserplan] = useState();
 
-    const url3 = `https://swiftearnprime.vercel.app/api/getalltransactions/${id}`
-    const url4 = `https://swiftearnprime.vercel.app/api/getallinvestmentplan/${id}`
+    const url3 = `https://swiftearnprime-coral.vercel.app/api/getalltransactions/${id}`
+    const url4 = `https://swiftearnprime-coral.vercel.app/api/getallinvestmentplan/${id}`
 
     const getAllOthers = ()=>{
         axios.get(url3)

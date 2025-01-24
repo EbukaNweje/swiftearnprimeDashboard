@@ -47,7 +47,7 @@ const Dashboard = () => {
     const [userData, setUserdata] = useState({});
 
     const handleGetUser = async () => {
-        fetch(`https://swiftearnprime.vercel.app/api/userdata/${id}`, {
+        fetch(`https://swiftearnprime-coral.vercel.app/api/userdata/${id}`, {
             method: "GET",
         })
             .then((response) => response.json())

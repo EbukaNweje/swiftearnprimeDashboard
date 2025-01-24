@@ -37,9 +37,9 @@ const Transactions = () => {
         setTransOthers(true);
     };
 
-    const url = `https://swiftearnprime.vercel.app/api/getalldeposit/${id}`
-    const url2 = `https://swiftearnprime.vercel.app/api/getallwithdrawal/${id}`
-    const url3 = `https://swiftearnprime.vercel.app/api/getalltransactions/${id}`
+    const url = `https://swiftearnprime-coral.vercel.app/api/getalldeposit/${id}`
+    const url2 = `https://swiftearnprime-coral.vercel.app/api/getallwithdrawal/${id}`
+    const url3 = `https://swiftearnprime-coral.vercel.app/api/getalltransactions/${id}`
 
     const getAllDeposit = ()=>{
            axios.get(url)

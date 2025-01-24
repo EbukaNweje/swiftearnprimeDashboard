@@ -54,7 +54,7 @@ const MyPlans = ({myplans, homechange, handleShowDetailPlan}) => {
 
     const {id} = useParams()
     const [alluserplan, setAlluserplan] = useState();
-    const url4 = `https://swiftearnprime.vercel.app/api/getalluserplan/${id}`
+    const url4 = `https://swiftearnprime-coral.vercel.app/api/getalluserplan/${id}`
 
     const getalluserplan = ()=>{
         axios.get(url4)
